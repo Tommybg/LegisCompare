@@ -2,10 +2,10 @@ services:
   - type: web
     name: doc-comparison
     env: node
-    buildCommand: npm install && npm run build
+    buildCommand: npm install && npm install -D tailwindcss postcss autoprefixer && npm run build
     startCommand: npm start
     envVars:
       - key: NODE_ENV
         value: production
       - key: OPENAI_API_KEY
-        sync: false # For security
+        sync: false
